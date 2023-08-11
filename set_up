@@ -14,10 +14,8 @@ Download cuDNN v8.9.3 (July 11th, 2023), for CUDA 11.x
 choose the dowloaded file according your OS.  Local Installer for Windows (Zip)
 unzip cudnn-windows-x86_64-8.9.3.28_cuda11-archive.zip, then copy and paste to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0
 
-Save zlibwapi.dll, follow this instruction
+or you can follow this guideline
 https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows
-save as link ZLIB DLL
-unzip zlib123dllx64.zip. then copy all files in ..\zlib123dllx64\dll_x64 to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin
 
 3. Install anaconda dan create environment py38
 Use anaconda to manage python library
@@ -26,12 +24,17 @@ conda create -n py38 python=3.8
 pip install keras
 pip install tensorflow-gpu==2.10.0
 
-
-if you issue with cusolver64_11.dll not found, then the solution
+4. Troubleshooting
+if you have an issue with "cusolver64_11.dll not found", then the solution
 1. Move to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin
 2. Rename file cusolver64_10.dll  To  cusolver64_11.dll 
 it works for me
 
+if you have an issue with ZLIB or zlibwapi.dll
+Save zlibwapi.dll, follow this instruction
+https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows
+save as link ZLIB DLL
+unzip zlib123dllx64.zip. then copy all files in ..\zlib123dllx64\dll_x64 to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin
 
 other python libraries (optional):
 pip install matplotlib
