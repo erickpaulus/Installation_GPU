@@ -37,10 +37,10 @@ save as link ZLIB DLL
 unzip zlib123dllx64.zip. then copy all files in ..\zlib123dllx64\dll_x64 to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin
 
 other python libraries (optional):
-'''
+```
 pip install matplotlib
 pip install scikit-learn
 pip install pandas
 pip install seaborn
 pip install opencv-python
-'''
+```
