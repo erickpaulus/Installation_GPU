@@ -1,35 +1,60 @@
 # Installation_GPU_Tensorflow_Ubuntu22.04
 
 ## Prerequest
-please make sure the hardware and software version compatability.
-   GPU Compute Capability :  https://developer.nvidia.com/cuda-gpus
-   Tensorflow version : [https://www.tensorflow.org/install/source_windows](https://www.tensorflow.org/install/source).
-   Software requirements : [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip).
+Please make sure the hardware and software version compatability.
+- GPU Compute Capability:  https://developer.nvidia.com/cuda-gpus
+- Tensorflow version: [https://www.tensorflow.org/install/source_windows](https://www.tensorflow.org/install/source).
+- Software requirements: [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip).
+- CUDA toolkit: [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+
+Software requirements
+
+    Python 3.9–3.12
+    pip version 19.0 or higher for Linux (requires manylinux2014 support) and Windows. pip version 20.3 or higher for macOS.
+    Windows Native Requires Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019
+
+The following NVIDIA® software are only required for GPU support.
+
+    NVIDIA® GPU drivers
+        >= 525.60.13 for Linux
+        >= 528.33 for WSL on Windows
+    CUDA® Toolkit 12.3.
+    cuDNN SDK 8.9.7.
+    (Optional) TensorRT to improve latency and throughput for inference.
+
+
   ```
-   For my case I have NVidia 4060 Ti Super and install tensorflow under Ubuntu 22.04
+   For my case I have NVidia 4060 Ti Super and install tensorflow under Ubuntu 22.04 with 
+   CUDA 12.4 , cuDNN 9, Python 3.12, tensorflow-2.18.0
   ```
 
-CUDA 11.2 , cuDNN 8.1, Python 3.8, tensorflow_gpu-2.10.0
-Steps for GPU installation :
-2. download and install
-download  CUDA via the official website  https://developer.nvidia.com/cuda-11.0-download-archive
-install CUDA and follow the instruction
 
-download cuDNN via the official website https://developer.nvidia.com/cudnn
-create account first to get access to download page
-Download cuDNN v8.9.3 (July 11th, 2023), for CUDA 11.x
-choose the dowloaded file according your OS.  Local Installer for Windows (Zip)
-unzip cudnn-windows-x86_64-8.9.3.28_cuda11-archive.zip, then copy and paste to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0
+## Steps for GPU installation 
+These steps are based on instruction in https://www.tensorflow.org/install/pip
+1. After instaling Ubuntu 22.04, please check if your computer already detected your GPU driver. You can use the following command to verify it is installed.
+   ```
+   nvidia-smi
+   ```
+Install the [NVIDIA GPU](https://www.nvidia.com/en-us/drivers/) driver if you have not.
 
-or you can follow this guideline
-https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows
+2. Install  CUDA Toolkit
+   [https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local](https://developer.nvidia.com/cuda-12-4-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local)
+   foloow the instruction for Base Installer and Driver Installer
 
-3. Install anaconda dan create environment py38
-Use anaconda to manage python library
-create environtment using conda , follow this instruction https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
-conda create -n py38 python=3.8
-pip install keras
-pip install tensorflow-gpu==2.10.0
+3. Install anaconda dan create environment tf
+   Create a virtual environment with venv
+   The venv module is part of Python’s standard library and is the officially recommended way to create virtual environments.
+   Navigate to your desired virtual environments directory and create a new venv environment named tf with the following command.
+   ```
+   python3 -m venv tf
+   ```
+   You can activate it with the following command.
+   ```
+   source tf/bin/activate
+   ```
+
+Make sure that the virtual environment is activated for the rest of the installation.
+
 
 4. Troubleshooting
 if you have an issue with "cusolver64_11.dll not found", then the solution
