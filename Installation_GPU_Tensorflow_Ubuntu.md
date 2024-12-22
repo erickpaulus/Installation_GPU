@@ -67,21 +67,20 @@ Make sure that the virtual environment is activated for the rest of the installa
    pip install tensorflow
    ```
    **Note:** Do not install TensorFlow with conda. It may not have the latest stable version. `pip` is recommended since TensorFlow is only officially released to PyPI.
+  
+5. Verify the installation
+   Verify the CPU setup:
+   ```
+   python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+   ```
+   If a tensor is returned, you've installed TensorFlow successfully.
 
-   
-6. Verify the installation
+   Verify the GPU setup:
+   ```
+   python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+   ```
+   If a list of GPU devices is returned, you've installed TensorFlow successfully. If not continue to the next step.
 
-Verify the CPU setup:
-
-python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
-
-If a tensor is returned, you've installed TensorFlow successfully.
-
-Verify the GPU setup:
-
-python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-
-If a list of GPU devices is returned, you've installed TensorFlow successfully. If not continue to the next step.
 
 other python libraries (optional):
 ```
