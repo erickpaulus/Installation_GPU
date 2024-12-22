@@ -52,21 +52,36 @@ Install the [NVIDIA GPU](https://www.nvidia.com/en-us/drivers/) driver if you ha
    ```
    source tf/bin/activate
    ```
-
 Make sure that the virtual environment is activated for the rest of the installation.
 
+4. Install TensorFlow
+   TensorFlow requires a recent version of pip, so upgrade your pip installation to be sure you're running the latest version.
+   ```
+   pip install --upgrade pip
+   ```
+   Then, install TensorFlow with pip.
+   ```
+   # For GPU users
+   pip install tensorflow[and-cuda]
+   # For CPU users
+   pip install tensorflow
+   ```
+   **Note:** Do not install TensorFlow with conda. It may not have the latest stable version. `pip` is recommended since TensorFlow is only officially released to PyPI.
 
-4. Troubleshooting
-if you have an issue with "cusolver64_11.dll not found", then the solution
-1. Move to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin
-2. Rename file cusolver64_10.dll  To  cusolver64_11.dll 
-it works for me
+   
+6. Verify the installation
 
-if you have an issue with ZLIB or zlibwapi.dll
-Save zlibwapi.dll, follow this instruction
-https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows
-save as link ZLIB DLL
-unzip zlib123dllx64.zip. then copy all files in ..\zlib123dllx64\dll_x64 to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin
+Verify the CPU setup:
+
+python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+
+If a tensor is returned, you've installed TensorFlow successfully.
+
+Verify the GPU setup:
+
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+If a list of GPU devices is returned, you've installed TensorFlow successfully. If not continue to the next step.
 
 other python libraries (optional):
 ```
