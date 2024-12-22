@@ -1,11 +1,16 @@
 # Installation_GPU_Tensorflow_Ubuntu22.04
 
-Steps for GPU installation :
-1. please make sure the  version compatability.
-choose the relevan version https://www.tensorflow.org/install/source_windows, for my case I will install tensorflow-gpu under Windows OS 
+## Prerequest
+please make sure the hardware and software version compatability.
+   GPU Compute Capability :  https://developer.nvidia.com/cuda-gpus
+   Tensorflow version : [https://www.tensorflow.org/install/source_windows](https://www.tensorflow.org/install/source).
+   Software requirements : [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip).
+  ```
+   For my case I have NVidia 4060 Ti Super and install tensorflow under Ubuntu 22.04
+  ```
 
 CUDA 11.2 , cuDNN 8.1, Python 3.8, tensorflow_gpu-2.10.0
-
+Steps for GPU installation :
 2. download and install
 download  CUDA via the official website  https://developer.nvidia.com/cuda-11.0-download-archive
 install CUDA and follow the instruction
