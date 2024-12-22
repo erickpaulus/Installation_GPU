@@ -24,7 +24,7 @@ The following NVIDIA® software are only required for GPU support.
 
 
   ```
-   For my case I have NVidia 4060 Ti Super and install tensorflow under Ubuntu 22.04 with 
+   For my case I have NVidia 4060 Ti 16GB and install tensorflow under Ubuntu 22.04 with 
    CUDA 12.4 , cuDNN 9, Python 3.12, tensorflow-2.18.0
   ```
 
