@@ -7,6 +7,7 @@ Please make sure the hardware and software version compatability.
 - Software requirements: [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip).
 - CUDA toolkit: [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 - NVIDIA driver instalation: [https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/?_ga=2.107036866.1123171390.1735315245-999707987.1734369161](https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/?_ga=2.107036866.1123171390.1735315245-999707987.1734369161)
+- cuDNN : [https://developer.nvidia.com/cudnn-archive](https://developer.nvidia.com/cudnn-archive)
 
 Software requirements
 
