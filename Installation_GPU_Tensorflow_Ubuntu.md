@@ -92,3 +92,25 @@ pip install pandas
 pip install seaborn
 pip install opencv-python
 ```
+## troubleshoot
+Check for Any Conflicts with other CUDA, for instance CUDA 12.7. Make sure CUDA 12.7  isn't installed via another method or package manager that could override the settings. List all installed CUDA packages:
+
+Run this command to see if there are any CUDA 12.7 packages installed:
+```
+dpkg -l | grep cuda
+```
+
+Remove any CUDA 12.7 packages (if found):
+
+If you see packages related to CUDA 12.7, remove them:
+```
+sudo apt-get remove --purge cuda-12-7
+```
+
+Clean up the system:
+
+After removal, run:
+```
+sudo apt-get autoremove
+sudo apt-get clean
+```
